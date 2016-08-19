@@ -30,7 +30,7 @@ endfunction "}}}
 "                         argument.
 " enableSub     {string}  Substition string applied with the enablePat if the
 "                         line is considered "disabled"
-function! Toggline#With(enabledPat, disableSub, disabledPat, enableSub) "{{{
+function! toggline#With(enabledPat, disableSub, disabledPat, enableSub) "{{{
   let l:line = getline('.')
 
   if (matchstr(l:line, a:enabledPat) == '')
@@ -45,17 +45,17 @@ endfunction "}}}
 " Toggle the given string at the end of the line.
 "
 " str   {string}  String that will be toggled
-function! Toggline#End(str) "{{{
+function! toggline#End(str) "{{{
   let l:trimedStr = s:trim(a:str)
 
-  call Toggline#With('\s*' . escape(l:trimedStr, '/\') . '\(\s*\)$', '\1', '\(\s*\)$', escape(a:str, '/\') . '\1')
+  call toggline#With('\s*' . escape(l:trimedStr, '/\') . '\(\s*\)$', '\1', '\(\s*\)$', escape(a:str, '/\') . '\1')
 endfunction "}}}
 
 " Toggle the given string at the beginning of the line.
 "
 " str   {string}  String that will be toggled
-function! Toggline#Start(str) "{{{
+function! toggline#Start(str) "{{{
   let l:trimedStr = s:trim(a:str)
 
-  call Toggline#With('^\(\s*\)' . escape(l:trimedStr, '/\') . '\s*', '\1', '^\(\s*\)', '\1' . escape(a:str, '/\'))
+  call toggline#With('^\(\s*\)' . escape(l:trimedStr, '/\') . '\s*', '\1', '^\(\s*\)', '\1' . escape(a:str, '/\'))
 endfunction "}}}

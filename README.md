@@ -28,8 +28,8 @@ be installed with a variety of plugin managers:
 Use this plugin by setting your own mappings in your `.vimrc`:
 
 ```
-nmap <silent> <leader>; :call Toggline#End(';')<CR>
-imap <silent> <leader>; <Esc><Esc>:call Toggline#End(';')<CR>a
+nmap <silent> <leader>; :call toggline#End(';')<CR>
+imap <silent> <leader>; <Esc><Esc>:call toggline#End(';')<CR>a
 ```
 
 Consider this line of code (where [*] represent the position of the cursor):
@@ -53,7 +53,7 @@ var foo = { ba[r]: 1 }
 Note that you can add spaces around the toggled string:
 
 ```
-nmap <silent> <leader>, :call Toggline#Start(', ')<CR>
+nmap <silent> <leader>, :call toggline#Start(', ')<CR>
 ```
 
 Now consider this code:
@@ -79,15 +79,15 @@ var foo = 1
 
 Available helper functions:
 
-### Toggline#End( str )
+### toggline#End( str )
 
 Toggle the given string at the end of the line.
 
-### Toggline#Start( str )
+### toggline#Start( str )
 
 Toggle the given string at the beginning of the line.
 
-### Toggline#With( enabledPat, disableSub, disabledPat, enableSub )
+### toggline#With( enabledPat, disableSub, disabledPat, enableSub )
 
 Toggle the current line using the given expresions and substitutions:
 

@@ -29,7 +29,7 @@ Use this plugin by setting your own mappings in your `.vimrc`:
 
 ```
 nmap <silent> <leader>; :call toggline#End(';')<CR>
-imap <silent> <leader>; <Esc><Esc>:call toggline#End(';')<CR>a
+inoremap <silent> <leader>; <C-\><C-O>:call toggline#End(';')<CR>
 ```
 
 Consider this line of code (where [*] represent the position of the cursor):
